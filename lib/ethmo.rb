@@ -1,5 +1,10 @@
-require "ethmo/version"
+# frozen_string_literal: true
 
+require 'singleton'
+
+require 'ethmo/version'
+require 'ethmo/config'
+
+# :nodoc
 module Ethmo
-  # Your code goes here...
 end
