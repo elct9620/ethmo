@@ -1,10 +1,19 @@
 # frozen_string_literal: true
 
+require 'socket'
 require 'singleton'
+require 'json'
 
 require 'ethmo/version'
-require 'ethmo/config'
 
 # :nodoc
 module Ethmo
+  autoload :IPCSocket, 'ethmo/ipc_socket'
+  autoload :Config,    'ethmo/config'
+
+  class << self
+    def config(&block)
+      Config.instance_exec(Config.instance, &block)
+    end
+  end
 end
