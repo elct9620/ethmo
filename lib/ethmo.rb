@@ -10,6 +10,8 @@ require 'ethmo/version'
 module Ethmo
   autoload :IPCSocket, 'ethmo/ipc_socket'
   autoload :Config,    'ethmo/config'
+  autoload :Client,    'ethmo/client'
+  autoload :Account,   'ethmo/account'
 
   class << self
     def config(&block)

@@ -5,14 +5,16 @@ module Ethmo
   class Config
     include Singleton
 
+    WEI = 10**18 # 1 ETH = 10^18 Wei
+
     class << self
       def respond_to_missing?(*args)
         instance.respond_to_missing?(*args)
       end
 
       def method_missing(name, *args, &block)
-        return instance.send(name, *args, &block) if instance.respond_to?(name)
-        super
+        return super unless instance.respond_to?(name)
+        instance.public_send(name, *args, &block)
       end
     end
 
