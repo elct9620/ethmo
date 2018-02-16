@@ -8,11 +8,13 @@ require 'ethmo/version'
 
 # :nodoc
 module Ethmo
-  autoload :IPCSocket, 'ethmo/ipc_socket'
-  autoload :Config,    'ethmo/config'
-  autoload :Client,    'ethmo/client'
-  autoload :Account,   'ethmo/account'
-  autoload :Monitor,   'ethmo/monitor'
+  autoload :IPCSocket,   'ethmo/ipc_socket'
+  autoload :Config,      'ethmo/config'
+  autoload :Client,      'ethmo/client'
+  autoload :Account,     'ethmo/account'
+  autoload :Block,       'ethmo/block'
+  autoload :Transaction, 'ethmo/transaction'
+  autoload :Monitor,     'ethmo/monitor'
 
   class << self
     def config(&block)

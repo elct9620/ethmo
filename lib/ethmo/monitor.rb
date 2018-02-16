@@ -3,6 +3,8 @@
 module Ethmo
   # :nodoc:
   class Monitor
+    autoload :NewHead, 'ethmo/monitor/new_head'
+
     include Enumerable
 
     def initialize(type = 'newHeads')
@@ -36,7 +38,7 @@ module Ethmo
     def process
       event = @conn.read
       return sleep 1 if event.nil?
-      @queue << JSON.parse(event)
+      @queue << NewHead.new(JSON.parse(event))
     end
 
     def subscribe!

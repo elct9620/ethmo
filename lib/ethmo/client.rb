@@ -17,7 +17,8 @@ module Ethmo
     end
 
     AVAILABLE_METHOD = {
-      balance_of: 'eth_getBalance'
+      balance_of: 'eth_getBalance',
+      block_from: 'eth_getBlockByHash'
     }.freeze
 
     def initialize
