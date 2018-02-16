@@ -12,6 +12,7 @@ module Ethmo
   autoload :Config,    'ethmo/config'
   autoload :Client,    'ethmo/client'
   autoload :Account,   'ethmo/account'
+  autoload :Monitor,   'ethmo/monitor'
 
   class << self
     def config(&block)
